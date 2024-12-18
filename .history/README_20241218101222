@@ -1,0 +1,77 @@
+# CLI Quiz App
+
+## Overview
+
+The **CLI Quiz App** is a simple command-line interface (CLI) application that allows users to take quizzes with multiple-choice questions. Users can also add their own questions and answers to the quiz database. The app tracks the user's score, stores the quiz data in an SQLite database using SQLAlchemy ORM, and provides an interactive experience.
+
+## Features
+
+- Take a quiz with multiple-choice questions.
+- Score tracking: see how well you did at the end.
+- Add new questions and multiple-choice options.
+- Choose the correct answer and validate it against the database.
+
+## Setup Instructions
+
+To set up this app, follow these steps:
+
+1. Clone this repository:
+
+    ```bash
+    git clone https://github.com/your-username/quiz_app.git
+    cd quiz_app
+    ```
+
+2. Install dependencies using **Pipenv**:
+
+    ```bash
+    pipenv install
+    ```
+
+    This will create and activate a virtual environment for you.
+
+3. Create the database tables:
+
+    ```python
+    # In Python shell, run the following to initialize the database:
+    from models import create_session
+    session = create_session()
+    ```
+
+    This command will create the SQLite database and the necessary tables (`questions`, `options`, and `answers`).
+
+4. Run the app:
+
+    ```bash
+    pipenv run python cli.py
+    ```
+
+    This will launch the quiz app in the command line.
+
+## Usage
+
+When the app is running, you will be prompted with a menu of options:
+
+1. **Start the quiz**: This will start the quiz and ask you multiple-choice questions. Your score will be tracked.
+2. **Add a new question**: Allows you to add a new question to the quiz database, along with multiple-choice options and the correct answer.
+3. **Exit**: Exit the app.
+
+## Database Structure
+
+The database uses three related tables:
+
+- **questions**: Stores quiz questions.
+- **options**: Stores possible answers for each question.
+- **answers**: Stores the correct answer for each question.
+
+## Dependencies
+
+This project uses the following Python dependencies:
+
+- **SQLAlchemy**: For database management and ORM functionality.
+- **Pipenv**: To manage virtual environments and dependencies.
+
+To install the dependencies, run:
+
+```bash
+pipenv install
